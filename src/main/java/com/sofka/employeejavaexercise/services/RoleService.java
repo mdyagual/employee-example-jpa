@@ -1,6 +1,8 @@
 package com.sofka.employeejavaexercise.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,13 +27,13 @@ public class RoleService {
         return rRepository.findById(id);
     }
 
-    //Crear rol
-    public Role saveEmployee(Role r){
+    //Crear role
+    public Role saveRole(Role r){
         return rRepository.saveAndFlush(r);
     }
 
-    //Actualizar rol
-    public boolean updateEmployee(Role r){
+    //Actualizar role
+    public boolean updateRole(Role r){
         Optional<Role> op_r = getRoleById(r.getId());  
         try{                       
             if(op_r.isPresent()){                
@@ -48,7 +50,7 @@ public class RoleService {
         
     }
 
-    //Eliminar rol
+    //Eliminar role
     public boolean deleteRole(Long id){    
         try{
             Optional<Role> op_r = getRoleById(id);             
@@ -65,6 +67,17 @@ public class RoleService {
             return false;
         }
     }
+
+    //Eliminar todos los roles
+    public ResponseEntity<HttpStatus> deleteAllRoles() {
+		try {
+		rRepository.deleteAll();
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+		}
+
+	}
 
     
 }
