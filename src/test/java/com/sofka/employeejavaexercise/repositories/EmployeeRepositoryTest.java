@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.sofka.employeejavaexercise.models.Employee;
 import com.sofka.employeejavaexercise.models.Project;
 import com.sofka.employeejavaexercise.models.Role;
-//import com.sofka.employeejavaexercise.repositories.EmployeeRepository;
-//import com.sofka.employeejavaexercise.repositories.ProjectRepository;
-//import com.sofka.employeejavaexercise.repositories.RoleRepository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
