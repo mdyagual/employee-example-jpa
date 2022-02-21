@@ -38,7 +38,7 @@ public class EmployeeService {
                 eRepository.saveAndFlush(e);
                 return true;
             }else{
-                throw new EmployeeNoExisteException("Usuario con id: "+e.getId()+" no existe");
+                throw new EmployeeNoExisteException("Employee with id: "+e.getId()+" does not exist");
             }
             
         }catch(EmployeeNoExisteException emp){   
@@ -57,7 +57,7 @@ public class EmployeeService {
                 return true;
 
             }else{
-                throw new EmployeeNoExisteException("Usuario con id: "+id+" no existe");
+                throw new EmployeeNoExisteException("Employee with id: "+id+" does not exist");
             }
             
         }catch(EmployeeNoExisteException e){   
