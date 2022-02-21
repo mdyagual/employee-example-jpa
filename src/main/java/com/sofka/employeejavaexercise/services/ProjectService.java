@@ -20,17 +20,17 @@ public class ProjectService {
         return (ArrayList<Project>) pRepository.findAll();
     }
 
-    //Obtener empleado por id
+    //Obtener project por id
     public Optional<Project> getProjectById(Long id){
         return pRepository.findById(id);
     }
 
-    //Crear empleado
+    //Crear project
     public Project saveProject(Project p){
         return pRepository.saveAndFlush(p);
     }
 
-    //Actualizar empleado
+    //Actualizar project
     public boolean updateProject(Project p){
         Optional<Project> op_e = getProjectById(p.getId());  
         try{                       
@@ -41,14 +41,14 @@ public class ProjectService {
                 throw new ProjectNoExisteException("Project with id: "+p.getId()+" does not exist");
             }
             
-        }catch(ProjectNoExisteException emp){   
-            System.out.println(emp);         
+        }catch(ProjectNoExisteException pro){   
+            System.out.println(pro);         
             return false;
         }
         
     }
 
-    //Eliminar empleado
+    //Eliminar project
     public boolean deleteProject(Long id){    
         try{
             Optional<Project> op_e = getProjectById(id);             
@@ -60,8 +60,8 @@ public class ProjectService {
                 throw new ProjectNoExisteException("Project with id: "+id+" does not exist");
             }
             
-        }catch(ProjectNoExisteException e){   
-            System.out.println(e);         
+        }catch(ProjectNoExisteException pro){   
+            System.out.println(pro);         
             return false;
         }
     }
