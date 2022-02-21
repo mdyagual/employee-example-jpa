@@ -1,13 +1,13 @@
-package com.javatechnolessons.demo.repository;
+package com.sofka.employeejavaexercise.repositories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.javatechnolessons.demo.model.Employee;
-import com.javatechnolessons.demo.model.Project;
-import com.javatechnolessons.demo.model.Role;
-import com.javatechnolessons.demo.repository.IEmployeeJpaRepository;
-import com.javatechnolessons.demo.repository.IProjectJpaRepository;
-import com.javatechnolessons.demo.repository.IRoleJpaRepository;
+import com.sofka.employeejavaexercise.models.Employee;
+import com.sofka.employeejavaexercise.models.Project;
+import com.sofka.employeejavaexercise.models.Role;
+import com.sofka.employeejavaexercise.repositories.EmployeeRepository;
+import com.sofka.employeejavaexercise.repositories.ProjectRepository;
+import com.sofka.employeejavaexercise.repositories.RoleRepository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +20,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 // @AutoConfigureTestDatabase (connection = EmbeddedDatabaseConnection.H2)
 public class EmployeeRepositoryTest {
     @Autowired
-    private IEmployeeJpaRepository repoEmpl;
+    private EmployeeRepository repoEmpl;
 
     @Autowired
-    private IRoleJpaRepository repoRole;
+    private RoleRepository repoRole;
 
     @Autowired
-    private IProjectJpaRepository repoProj;
+    private ProjectRepository repoProj;
 
     @Test
     public void saveEmployee() {

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/role")
-public class RoleProject {
+public class RoleController {
     @Autowired
     RoleService rService;
     

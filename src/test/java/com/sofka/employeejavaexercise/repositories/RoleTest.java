@@ -1,9 +1,9 @@
-package com.javatechnolessons.demo.repository;
+package com.sofka.employeejavaexercise.repositories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.javatechnolessons.demo.model.Role;
+import com.sofka.employeejavaexercise.models.Role;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 public class RoleTest {
     @Autowired
-    IRoleJpaRepository roleRepo;
+    RoleRepository roleRepo;
 
     @Test
     public void roleTest() {
